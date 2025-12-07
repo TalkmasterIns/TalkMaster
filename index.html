@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TalkMaster Education</title>
-  <link rel="stylesheet" href="style.css" />
+  
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
   
   
@@ -291,7 +293,62 @@ footer .copyright {
   }
 }
 
-  
+  .container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        .card {
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            transform-style: preserve-3d;
+            transition: 0.4s ease;
+            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) rotateX(15deg) rotateY(10deg) scale(1.08);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.15);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        /* Unique glowing borders */
+        .facebook:hover { border-color: #1877f2; box-shadow: 0 0 20px #1877f2; }
+        .instagram:hover { border-color: #e1306c; box-shadow: 0 0 20px #e1306c; }
+        .tiktok:hover { border-color: #00f2ea; box-shadow: 0 0 20px #00f2ea; }
+        .youtube:hover { border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0px); }
+        }
+
   
    </style>
 </head>
@@ -299,13 +356,9 @@ footer .copyright {
   <header class="navbar">
     <div class="logo">🎓 TalkMaster</div>
 
-    <nav class="nav-links">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-
+    
     <div class="actions">
-         <button id="darkToggle" class="btn-dark">🌙</button>
+      <button id="darkToggle" class="btn-dark">🌙</button>
       <button id="menuToggle" class="hamburger">☰</button>
     </div>
   </header>
@@ -315,28 +368,44 @@ footer .copyright {
       <h4>🎖️ CERTIFIED</h4>
       <h1>Let’s learn about new<br />knowledge and abilities</h1>
       <p>Advance your career with professional online learning.</p>
-      <button class="btn-main">Find Course</button>
+      
+ <div class="container">
+
+        <a href="#" class="card facebook">
+            <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+            Facebook
+        </a>
+
+        <a href="#" class="card instagram">
+            <div class="icon">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            Instagram
+        </a>
+
+        <a href="#" class="card tiktok">
+            <div class="icon">
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+            TikTok
+        </a>
+
+        <a href="#" class="card youtube">
+            <div class="icon">
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            YouTube
+        </a>
+
+    </div>
+	  
     </div>
     <div class="hero-img" data-aos="zoom-in">
       <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt="Learning Illustration" />
     </div>
   </section>
-
-  <section class="features">
-    <div class="feature" data-aos="fade-right">
-      <h3>👨‍🏫 Professional Mentor</h3>
-      <p>Learn from expert instructors.</p>
-    </div>
-    <div class="feature highlight" data-aos="fade-up">
-      <h3>📚 Lifetime Access</h3>
-      <p>Study anywhere, anytime.</p>
-    </div>
-    <div class="feature" data-aos="fade-left">
-      <h3>💻 Online Mode</h3>
-      <p>Access lessons 24/7.</p>
-    </div>
-  </section>
-
   <section class="learning" data-aos="fade-up">
     <div class="image" data-aos="zoom-in">
       <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&w=400" alt="Student" />
@@ -350,15 +419,14 @@ footer .copyright {
         <li>🌍 World Class</li>
         <li>⏰ Easy Learning</li>
       </ul>
-      <button class="btn-main">Start Course</button>
     </div>
   </section>
 
   <footer data-aos="fade-up">
     <div class="footer-container">
       <div>
-        <h3>Rajin</h3>
-        <p>Rajin helps you achieve your career goals through modern learning.</p>
+        <h3>TalkMaster</h3>
+        <p>TalkMaster helps you achieve your career goals through modern learning.</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -380,13 +448,13 @@ footer .copyright {
       </div>
       <div>
         <h4>Contact</h4>
-        <p>📍 Riyadh, Saudi Arabia</p>
+        <p>📍 TalkMaster, Yemen</p>
         <p>📞 +966 555 555 555</p>
-        <p>📧 info@rajin.com</p>
+        <p>📧 info@TalkMaster.com</p>
       </div>
     </div>
     <div class="copyright">
-      © 2025 Rajin. All Rights Reserved.
+      © 2025 TalkMaster. All Rights Reserved.
     </div>
   </footer>
 
@@ -410,6 +478,3 @@ footer .copyright {
   </script>
 </body>
 </html>
-
-
-
